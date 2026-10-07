@@ -142,9 +142,7 @@ bot.on("message", async (ctx) => {
 
   if (u.step === "name") {
     const text = (ctx.message.text || "").trim();
-    if (text.length < 2  text.length > 60  /^\d+$/.test(text)) {
-      return ctx.reply("Please send your full name as text (for example: Abebe Kebede).");
-    }
+    if (text.length < 2 || text.length > 60 || /^\d+$/.test(text)) {
     u.fullName = text;
     u.step = "proof";
     save(db);
