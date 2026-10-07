@@ -24,7 +24,7 @@ function save(db) {
 function takenSet(db) {
   const s = new Set(db.entries.map((e) => e.number));
   for (const u of Object.values(db.users)) {
-    if (u.number && (u.step === "name"  u.step === "proof"  u.step === "pending")) {
+    if (u.number && (u.step === "name" || u.step === "proof" || u.step === "pending")) {
     }
   }
   return s;
